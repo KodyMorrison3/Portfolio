@@ -24,7 +24,7 @@ if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
       const x = event.clientX - rect.left - rect.width / 2;
       const y = event.clientY - rect.top - rect.height / 2;
 
-      item.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
+      item.style.transform = `translate(${x * 0.06}px, ${y * 0.06}px)`;
     });
 
     item.addEventListener('pointerleave', () => {
