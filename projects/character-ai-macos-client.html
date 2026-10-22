@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Character.AI macOS client built natively with Swift and SwiftUI.">
+  <meta name="description" content="Veyrin is an unofficial native macOS client for Character.AI, built with Swift and SwiftUI.">
   <meta name="theme-color" content="#f5f5f2">
   <meta name="robots" content="index, follow">
-  <title>Character.AI macOS Client | Kody Morrison</title>
+  <title>Veyrin | Character.AI macOS Client | Kody Morrison</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=20261022-6">
   <script src="../script.js" defer></script>
 </head>
 <body>
@@ -21,35 +21,55 @@
       <a href="../index.html#projects">Projects</a>
       <a href="../index.html#about">About</a>
       <a href="../index.html#contact">Contact</a>
-      <a href="../CV.pdf" download>Download CV ↗</a>
-      <a href="https://github.com/KodyMorrison3" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="../Kody_Morrison_CV.pdf" download>Download CV</a>
+      <a href="https://github.com/KodyMorrison3" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
   </header>
 
   <main class="case-study">
     <section class="case-hero">
+<<<<<<< Updated upstream
       <p class="eyebrow reveal reveal-delay-1">03 · Current · Native macOS</p>
       <h1 class="reveal reveal-delay-1">Character.AI <em>macOS Client.</em></h1>
       <p class="case-intro reveal reveal-delay-3">A native SwiftUI macOS client for Character.AI, with conversation streaming, character discovery and native macOS features. REST requests handle data and history, while WebSockets handle live message generation.</p>
       <div class="case-meta reveal reveal-delay-3"><span>Swift</span><span>SwiftUI</span><span>REST</span><span>WebSockets</span><span>Swift Concurrency</span></div>
       <span class="case-status case-status-active reveal reveal-delay-3">In development</span>
+=======
+      <p class="eyebrow reveal reveal-delay-1">03 · Veyrin · Native macOS</p>
+      <h1 class="reveal reveal-delay-1">Veyrin <em>for macOS.</em></h1>
+      <p class="case-intro reveal reveal-delay-3">Veyrin is my unofficial Character.AI app for Mac. I built it in SwiftUI, using REST for chat history and WebSockets to stream replies.</p>
+      <div class="case-meta reveal reveal-delay-3"><span>Swift</span><span>SwiftUI</span><span>macOS</span><span>REST</span><span>WebSockets</span><span>Keychain</span></div>
+      <span class="case-status case-status-active reveal reveal-delay-3">Experimental · v0.1.1</span>
+    </section>
+
+    <section class="case-screenshot" aria-label="Veyrin screenshots">
+      <img class="case-image" src="../screenshots/veyrin-conversations-960.webp" srcset="../screenshots/veyrin-conversations-480.webp 480w, ../screenshots/veyrin-conversations-960.webp 960w, ../screenshots/veyrin-conversations-1440.webp 1440w, ../screenshots/veyrin-conversations-1800.webp 1800w" sizes="calc(100vw - 112px)" width="1800" height="986" alt="Veyrin's native macOS conversation screen with a streamed chat and translucent interface" loading="lazy" decoding="async">
+      <img class="case-image" src="../screenshots/veyrin-browsing-960.webp" srcset="../screenshots/veyrin-browsing-480.webp 480w, ../screenshots/veyrin-browsing-960.webp 960w, ../screenshots/veyrin-browsing-1440.webp 1440w, ../screenshots/veyrin-browsing-1800.webp 1800w" sizes="calc(100vw - 112px)" width="1800" height="998" alt="Veyrin's Discover screen showing recommended Character.AI characters" loading="lazy" decoding="async">
+>>>>>>> Stashed changes
     </section>
 
     <section class="case-section">
       <div class="case-grid">
-        <p class="case-lead reveal">Native macOS software, not a web wrapper.</p>
+        <p class="case-lead reveal">A native Mac app, not a web wrapper.</p>
         <div class="reveal reveal-delay-1">
+<<<<<<< Updated upstream
           <p>Veyrin is built as a native SwiftUI app rather than a website embedded in a browser view. The code is split across authentication, networking, models, services, view models and SwiftUI views, so protocol handling stays out of the interface.</p>
           <p>Character.AI does not provide an official public API for third-party clients, so Veyrin relies on undocumented endpoints and WebSocket behaviour. The implementation does not attempt to bypass authentication, CAPTCHA, rate limits, paywalls or other access controls.</p>
+=======
+          <p>The app is split into SwiftUI views, view models and services. REST loads chats and profiles. WebSockets handle streamed replies, edits and alternate responses.</p>
+          <p>Sign-in uses a session token, which the app checks before saving it in the macOS Keychain. Requests go to Character.AI over HTTPS and WSS. The app doesn’t keep HTTP cookies or cache responses.</p>
+          <p>Character.AI doesn’t offer a public API for third-party clients, so Veyrin uses undocumented endpoints. They can change without notice, and using an unofficial client may put your account at risk.</p>
+>>>>>>> Stashed changes
         </div>
       </div>
     </section>
 
     <section class="case-section">
       <div class="case-grid">
-        <p class="case-lead reveal">Current work.</p>
+        <p class="case-lead reveal">What it can do.</p>
         <div class="reveal reveal-delay-1">
           <ul class="case-list">
+<<<<<<< Updated upstream
             <li>Native macOS navigation, settings and Keychain-backed authentication</li>
             <li>REST services for character profiles, discovery, feed content and conversation history</li>
             <li>WebSocket streaming for message generation and alternate candidates</li>
@@ -57,6 +77,20 @@
             <li>Personas, character avatars and native image handling</li>
             <li>Bounded caches, background image processing and lazy conversation rendering</li>
             <li>WebSocket connection lifecycle, timeout and cancellation handling</li>
+=======
+            <li>Search chat history, browse recent chats and load older messages</li>
+            <li>Discover recommended characters, popular lists and curated scenes</li>
+            <li>Search characters, open profiles and find similar characters</li>
+            <li>Browse the feed, posts and creator profiles</li>
+            <li>Switch personas and view conversation memory</li>
+            <li>Choose a chat style when starting a copied conversation</li>
+            <li>Stream replies, edit messages, switch responses, pin or rewind</li>
+            <li>Read conversations, profile details, personas and Charms activity</li>
+            <li>Change wallpaper, glass and avatar settings</li>
+            <li>Check GitHub releases from Settings</li>
+            <li>Sign in with a session token stored in the macOS Keychain</li>
+            <li>Stage image attachments for preview. Sending images isn’t supported yet.</li>
+>>>>>>> Stashed changes
           </ul>
         </div>
       </div>
@@ -64,18 +98,25 @@
 
     <section class="case-section case-end">
       <div class="case-grid">
-        <p class="case-lead reveal">What I'm learning.</p>
+        <p class="case-lead reveal">It’s still early.</p>
         <div class="reveal reveal-delay-1">
+<<<<<<< Updated upstream
           <p>A recent reliability and performance pass covers response decoding, WebSocket lifecycle handling, pagination safeguards, streaming updates, image loading and cache limits. The app uses structured concurrency and keeps expensive decoding and image work off the main actor where appropriate.</p>
           <p>There are still clear limitations: character search is unavailable because the endpoint blocks this client, offline use is not supported, and durable local conversation persistence remains in development. Character.AI can also change its undocumented backend at any time.</p>
+=======
+          <p>This is an experimental release, and the Character.AI endpoints it uses are undocumented. Character search results aren’t available, chats need a connection, and image attachments can be previewed but not sent. The app doesn’t install updates or have a notarised release for general use.</p>
+          <p>Persona settings and wallpaper are saved on the Mac. They aren’t encrypted, and signing out doesn’t remove them or the image cache.</p>
+>>>>>>> Stashed changes
         </div>
       </div>
       <div class="case-actions reveal">
-        <a href="../index.html#projects">Back to projects <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/KodyMorrison3/Veyrin/releases/latest" target="_blank" rel="noopener noreferrer">Latest release</a>
+        <a href="https://github.com/KodyMorrison3/Veyrin" target="_blank" rel="noopener noreferrer">View source</a>
+        <a href="../index.html#projects">Back to projects</a>
       </div>
     </section>
   </main>
 
-  <footer><span>© 2026 Kody Morrison</span><span>Built with HTML, CSS &amp; JavaScript</span><a href="../index.html#top">Back to top ↑</a></footer>
+  <footer><span>© 2026 Kody Morrison</span><span>Built with HTML, CSS &amp; JavaScript</span><a href="../index.html#top">Back to top</a></footer>
 </body>
 </html>

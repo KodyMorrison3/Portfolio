@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Case study for Kody Morrison's Portknockie Motorcycle Dealership project, including the web application and development iOS app.">
+  <meta name="description" content="Portknockie Motorcycle Dealership is a full-stack PHP and MySQL website with an iOS prototype currently paused at the hosted API integration.">
   <meta name="theme-color" content="#f5f5f2">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Portknockie Motorcycle Dealership | Kody Morrison">
-  <meta property="og:description" content="A dealership management system with a web application and development iOS app, focused on motorcycle inventory, availability and test ride booking.">
+  <meta property="og:description" content="A full-stack motorcycle dealership website, with an iOS prototype that works locally but is paused while the hosted site blocks its API requests.">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary">
   <title>Portknockie Motorcycle Dealership | Kody Morrison</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="preload" href="https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLmvDIaI.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/sourceserif4/v15/vEFF2_tTDB4M7-auWDN0ahZJW3IX2iZPwg3BucvUtfykDXr4Y3qwzQ.woff2" as="font" type="font/woff2" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=20261022-6">
 </head>
 <body>
   <header class="site-header">
@@ -24,51 +26,51 @@
       <a href="../index.html#projects">Projects</a>
       <a href="../index.html#about">About</a>
       <a href="../index.html#contact">Contact</a>
-      <a href="../CV.pdf" download>Download CV ↗</a>
-      <a href="https://github.com/KodyMorrison3" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="../Kody_Morrison_CV.pdf" download>Download CV</a>
+      <a href="https://github.com/KodyMorrison3" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
   </header>
 
   <main class="case-study" id="top">
     <section class="case-hero">
-      <p class="eyebrow">02 · Current · Web &amp; iOS</p>
+      <p class="eyebrow">02 · Paused · Web &amp; iOS</p>
       <h1>Portknockie<br><em>Motorcycle Dealership.</em></h1>
-      <p class="case-intro">A dealership management system focused on motorcycle inventory, availability and a polished multi-step test ride booking journey, with a development iOS app being built alongside the web application.</p>
+      <p class="case-intro">The full-stack PHP and MySQL website works. I also have an iOS prototype that works with the local PHP API and database, but the hosted site blocks its requests as bot traffic. I’ve paused the iOS integration while I look into the hosting issue.</p>
       <div class="case-meta"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>CSS</span><span>Swift</span></div>
-      <span class="case-status case-status-active">In active development</span>
+      <span class="case-status">Paused</span>
     </section>
 
     <section class="case-screenshot" aria-label="Project screenshot">
-      <img class="case-image" src="../screenshots/Screenshot%202026-09-04%20at%2019.36.52.png" alt="Screenshot of the Portknockie Motorcycle Dealership web application" loading="lazy">
+      <img class="case-image" src="../screenshots/dealership-1600.webp" srcset="../screenshots/dealership-480.webp 480w, ../screenshots/dealership-960.webp 960w, ../screenshots/dealership-1600.webp 1600w, ../screenshots/dealership-2400.webp 2400w" sizes="calc(100vw - 112px)" width="2750" height="1560" alt="Screenshot of the Portknockie Motorcycle Dealership web application" loading="lazy" decoding="async">
     </section>
 
     <section class="case-section">
       <div class="section-heading"><span class="section-number">01</span><h2>Overview</h2></div>
-      <div class="case-grid"><p class="case-lead">This project takes the motorcycle software into a dealership environment and now covers both web and iOS development.</p><div><p>The current focus is a practical dealership workflow where motorcycles can be managed and customers can move through a clear test ride booking process.</p><p>The web application is being developed alongside a native iOS app, giving me the opportunity to work on the same project across both web and mobile platforms.</p></div></div>
+      <div class="case-grid"><p class="case-lead">The website works. The iOS connection is paused.</p><div><p>The PHP and MySQL website handles motorcycle listings and test ride bookings. Customers choose a motorcycle, pick a date and time, enter their details, then review the booking.</p><p>The iOS prototype works against the local PHP API and SQL database. The hosted domain blocks its requests as bot traffic, so I’ve paused work on connecting it to the live site.</p></div></div>
     </section>
 
     <section class="case-section">
-      <div class="section-heading"><span class="section-number">02</span><h2>Booking journey</h2></div>
-      <div class="case-grid"><p class="case-lead">The booking flow is designed around preventing invalid bookings before they reach the database.</p><div><p>The four-step journey separates motorcycle selection, date and time selection, customer information and confirmation. Availability is checked against existing bookings and the final submission is validated again before the booking is created.</p><p>This makes the workflow easier to understand for users while keeping the important validation on the server.</p></div></div>
+      <div class="section-heading"><span class="section-number">02</span><h2>Test ride bookings</h2></div>
+      <div class="case-grid"><p class="case-lead">The server checks availability before saving a booking.</p><div><p>The booking form has four steps: choose a motorcycle, pick a date and time, enter customer details, then confirm. Availability is checked against existing bookings, and the submitted booking is validated again on the server.</p><p>That second check matters. A time slot might be taken after someone starts filling in the form.</p></div></div>
     </section>
 
     <section class="case-section">
       <div class="section-heading"><span class="section-number">03</span><h2>Web &amp; iOS</h2></div>
-      <div class="case-grid"><p class="case-lead">The project is now being developed across two platforms.</p><div><p>The dealership website handles the main customer and administration workflows, while a native iOS app is being developed alongside it using Swift and Xcode.</p><p>The iOS app is still in development, but it gives the project a second platform and lets me explore native mobile development alongside the PHP and MySQL web application.</p></div></div>
+      <div class="case-grid"><p class="case-lead">The iOS prototype works locally, but not against the hosted site yet.</p><div><p>The app can use the local PHP APIs and SQL database. Requests from the iOS prototype to the hosted domain are blocked as bot traffic.</p><p>That means the website is working, and the iOS prototype works locally, but the full iOS-to-hosted-site setup isn’t working yet.</p></div></div>
     </section>
 
     <section class="case-section">
       <div class="section-heading"><span class="section-number">04</span><h2>Engineering</h2></div>
-      <div class="case-grid"><p class="case-lead">The project is being developed as a real continuation rather than a one-off university prototype.</p><div><p>The database includes motorcycle inventory and booking data, with the application logic responsible for availability and validation. The interface is intentionally kept clean so the booking process is the focus.</p><p>Recent work has concentrated on refining the booking UI, handling booking-time validation and making the journey behave reliably from start to finish.</p></div></div>
+      <div class="case-grid"><p class="case-lead">The booking API checks availability on the server.</p><div><p>Motorcycle inventory and test ride bookings are stored in the SQL database. Availability is checked before a booking is created, then checked again when the customer submits the form.</p><p>The website and its PHP API work. I’ve paused the live iOS connection while I look into why the hosted domain blocks the app’s requests.</p></div></div>
     </section>
 
     <section class="case-section case-end">
       <div class="section-heading"><span class="section-number">05</span><h2>Next steps</h2></div>
-      <div class="case-grid"><p class="case-lead">The dealership system and iOS app are still being developed.</p><div><p>Further work will expand the dealership functionality and continue development of the iOS app while keeping the same emphasis on reliable workflows, database integrity and a polished user experience.</p></div></div>
-      <div class="case-actions"><a href="https://portknockiemotorcycledealership.freedev.app" target="_blank" rel="noopener noreferrer">View live site ↗</a><a href="https://github.com/KodyMorrison3/PortknockieMotorcycleDealership" target="_blank" rel="noopener noreferrer">View source ↗</a><a href="../index.html#projects">Back to projects ↑</a></div>
+      <div class="case-grid"><p class="case-lead">The iOS integration is on hold.</p><div><p>The website is live. I’ll pick up the iOS connection again once I’ve worked out why the hosted site treats its requests as bot traffic.</p></div></div>
+      <div class="case-actions"><a href="https://portknockiemotorcycledealership.freedev.app" target="_blank" rel="noopener noreferrer">View live site</a><a href="../index.html#projects">Back to projects</a></div>
     </section>
   </main>
 
-  <footer><span>© 2026 Kody Morrison</span><span>Built with HTML, CSS &amp; JavaScript</span><a href="#top">Back to top ↑</a></footer>
+  <footer><span>© 2026 Kody Morrison</span><span>Built with HTML, CSS &amp; JavaScript</span><a href="#top">Back to top</a></footer>
 </body>
 </html>
