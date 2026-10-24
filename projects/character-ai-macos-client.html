@@ -4,14 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Veyrin is an experimental native macOS client for Character.AI, local Ollama models and cloud providers, built with SwiftUI.">
-  <meta name="theme-color" content="#f5f5f2">
+  <meta name="theme-color" content="#f1f0ec">
   <meta name="robots" content="index, follow">
   <title>Veyrin | Kody Morrison</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261022-6">
+  <link rel="stylesheet" href="../styles.css?v=20261024-1">
   <script src="../script.js" defer></script>
 </head>
 <body>
@@ -28,7 +25,7 @@
 
   <main class="case-study">
     <section class="case-hero">
-      <p class="eyebrow reveal reveal-delay-1">03 · Veyrin · Native macOS</p>
+      <p class="eyebrow reveal reveal-delay-1">Native macOS</p>
       <h1 class="reveal reveal-delay-1">Veyrin.</h1>
       <p class="case-intro reveal reveal-delay-3">Veyrin is my experimental native macOS app. It started as an unofficial Character.AI client, and now also runs chats against local Ollama models and my own cloud API keys.</p>
       <div class="case-meta reveal reveal-delay-3"><span>Swift</span><span>SwiftUI</span><span>macOS</span><span>REST</span><span>WebSockets</span><span>Ollama</span><span>Keychain</span></div>
@@ -47,7 +44,7 @@
           <p>The app is split into SwiftUI views, view models and services. Character.AI runs through its own REST and WebSocket layer, because there’s no public API for third-party clients. Local and cloud chat use a separate provider layer that lists models and streams text over HTTP.</p>
           <p>That split is deliberate. Character.AI keeps candidates, pins, edits and rewind, while Ollama and the cloud providers only have to stream a reply. Forcing both through one generic conversation API would have cost the Character.AI features.</p>
           <p>Sign-in uses a session token, which the app checks before saving it in the macOS Keychain. Cloud API keys are separate Keychain items. Provider requests use an ephemeral session with no cookies, cache or redirects, and only the endpoint you picked receives the chat.</p>
-          <p>Character.AI doesn’t offer a public API for third-party clients, so Veyrin uses undocumented endpoints. They can change without notice, and using an unofficial client may put your account at risk.</p>
+          <p>The Character.AI endpoints Veyrin uses are undocumented. They can change without notice, and using an unofficial client may put your account at risk.</p>
         </div>
       </div>
     </section>
@@ -100,6 +97,6 @@
     </section>
   </main>
 
-  <footer><span>© 2026 Kody Morrison</span><span>Built with HTML, CSS &amp; JavaScript</span><a href="../index.html#top">Back to top</a></footer>
+  <footer><span>© 2026 Kody Morrison</span><a href="../index.html#top">Back to top</a></footer>
 </body>
 </html>

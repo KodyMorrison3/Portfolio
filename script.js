@@ -1,9 +1,11 @@
-const revealItems = document.querySelectorAll('.reveal');
-const magneticItems = document.querySelectorAll('.magnetic');
-const glassItems = document.querySelectorAll('.site-header, .hero, .projects, .about, .stack, .contact, footer, .current-project, .project, .case-hero, .case-screenshot, .case-section');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = window.matchMedia('(pointer: fine)');
 
-if (!reducedMotion && 'IntersectionObserver' in window) {
+/* Reveal on scroll */
+const revealItems = document.querySelectorAll('.reveal');
+const showAll = () => revealItems.forEach((item) => item.classList.add('is-visible'));
+
+if (!reducedMotion.matches && 'IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -15,34 +17,42 @@ if (!reducedMotion && 'IntersectionObserver' in window) {
 
   revealItems.forEach((item) => observer.observe(item));
 } else {
-  revealItems.forEach((item) => item.classList.add('is-visible'));
+  showAll();
 }
 
-if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
-  glassItems.forEach((item) => {
-    item.addEventListener('pointermove', (event) => {
-      const rect = item.getBoundingClientRect();
-      item.style.setProperty('--glass-x', `${event.clientX - rect.left - rect.width / 2}px`);
-      item.style.setProperty('--glass-y', `${event.clientY - rect.top - rect.height / 2}px`);
-    });
+/* Light that follows the pointer.
+   Only the surfaces that float above the page (header, project cards,
+   current-project bar) track it. Both preferences are checked on every move,
+   so changing them while the page is open takes effect straight away. */
+const litSurfaces = document.querySelectorAll('.site-header, .current-project, .project');
 
-    item.addEventListener('pointerleave', () => {
-      item.style.removeProperty('--glass-x');
-      item.style.removeProperty('--glass-y');
-    });
+litSurfaces.forEach((surface) => {
+  let frame = 0;
+  let x = 0;
+  let y = 0;
+
+  const clear = () => {
+    if (frame) cancelAnimationFrame(frame);
+    frame = 0;
+    surface.style.removeProperty('--glass-x');
+    surface.style.removeProperty('--glass-y');
+  };
+
+  surface.addEventListener('pointermove', (event) => {
+    if (reducedMotion.matches || !finePointer.matches) return;
+
+    const rect = surface.getBoundingClientRect();
+    x = event.clientX - rect.left - rect.width / 2;
+    y = event.clientY - rect.top - rect.height / 2;
+
+    if (!frame) {
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        surface.style.setProperty('--glass-x', `${x}px`);
+        surface.style.setProperty('--glass-y', `${y}px`);
+      });
+    }
   });
 
-  magneticItems.forEach((item) => {
-    item.addEventListener('pointermove', (event) => {
-      const rect = item.getBoundingClientRect();
-      const x = event.clientX - rect.left - rect.width / 2;
-      const y = event.clientY - rect.top - rect.height / 2;
-
-      item.style.transform = `translate(${x * 0.06}px, ${y * 0.06}px)`;
-    });
-
-    item.addEventListener('pointerleave', () => {
-      item.style.transform = '';
-    });
-  });
-}
+  surface.addEventListener('pointerleave', clear);
+});
