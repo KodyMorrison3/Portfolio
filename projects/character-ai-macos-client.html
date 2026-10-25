@@ -29,7 +29,7 @@
       <h1 class="reveal reveal-delay-1">Veyrin.</h1>
       <p class="case-intro reveal reveal-delay-3">Veyrin is my experimental native macOS app. It started as an unofficial Character.AI client, and now also runs chats against local Ollama models and my own cloud API keys.</p>
       <div class="case-meta reveal reveal-delay-3"><span>Swift</span><span>SwiftUI</span><span>macOS</span><span>REST</span><span>WebSockets</span><span>Ollama</span><span>Keychain</span></div>
-      <span class="case-status case-status-active reveal reveal-delay-3">Experimental · v0.1.1</span>
+      <span class="case-status case-status-active reveal reveal-delay-3">Experimental · v0.2.0</span>
     </section>
 
     <section class="case-screenshot" aria-label="Veyrin screenshots">
@@ -58,6 +58,7 @@
             <li>Stream Character.AI replies, switch responses, edit, pin or rewind</li>
             <li>Test an Ollama endpoint and choose an installed model. Veyrin never downloads models</li>
             <li>Add Claude, OpenAI Responses, Chat Completions or an OpenAI-compatible endpoint, with its key in the Keychain</li>
+            <li>Start from a Free Providers preset for Gemini, Groq, OpenRouter, Cloudflare Workers AI or a router on this Mac, then supply your own key and model ID</li>
             <li>Save provider chats per provider, model and character, then reopen them from the conversation sidebar</li>
             <li>Search chat history, browse recent chats and load older messages</li>
             <li>Save Discover characters to a local library, with search, editing and export</li>
@@ -77,6 +78,7 @@
         <div class="reveal reveal-delay-1">
           <p>Saved characters, library edits, imported personas, provider chats and the image cache are plain JSON and files in Application Support. They stay on disk after you sign out, and they aren’t encrypted.</p>
           <p>Because those are plain local files, saving characters and chatting with Ollama keep working without a connection. Character.AI history is still fetched per request, so that side needs a network.</p>
+          <p>A saved chat that can’t be read, or that belongs to a different provider, model or character, is reported as such and left alone. Veyrin would rather show an error than silently start an empty conversation over the file.</p>
         </div>
       </div>
     </section>
@@ -86,7 +88,7 @@
         <p class="case-lead reveal">It’s still early.</p>
         <div class="reveal reveal-delay-1">
           <p>This is an experimental release, and the Character.AI endpoints it uses are undocumented. Character search needs the web-next-auth cookie from a signed-in browser; suggestions, Discover and similar characters work without it. Chat history still needs a connection, cloud chat is text only, and image attachments can be previewed but not sent.</p>
-          <p>Provider chats live only on this Mac and nothing migrates between providers. The build is ad-hoc signed rather than notarised, and it doesn’t install updates.</p>
+          <p>Provider chats live only on this Mac and nothing migrates between providers. Only the local router and the Gemini free tier have had real chats so far; the rest are checked as far as model listing. The build is ad-hoc signed rather than notarised, and it doesn’t install updates.</p>
         </div>
       </div>
       <div class="case-actions reveal">
